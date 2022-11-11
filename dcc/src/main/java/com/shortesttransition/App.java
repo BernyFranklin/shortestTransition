@@ -1,5 +1,7 @@
 package com.shortesttransition;
 
+import java.util.HashMap;
+
 /**
  * Given a START word, an END word, and a dictionary 
  * of valid words, find the shortest transformation sequence
@@ -23,6 +25,15 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        // Declare HashMap as per prompt
+        HashMap<Integer, String> dict = new HashMap<Integer, String>();
+        dict.put(0, "dot");
+        dict.put(1, "dop");
+        dict.put(2, "dat");
+        dict.put(3, "cat");
+        // Declare start and end strings
+        String start = "dog";
+        String end = "cat";
+        // Send Hash, start and end to a function
     }
 }
