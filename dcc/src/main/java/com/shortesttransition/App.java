@@ -43,7 +43,7 @@ public class App
         String start = "dog";
         String end = "cat";
         // Send Hash, start and end to a function
-        shortestTransition(dict1, start, end);
+        shortestTransition(dict2, start, end);
 
     }
 
@@ -71,12 +71,14 @@ public class App
                     break;
                 }
             }
+
+            if (temp.compareTo(end) == 0) {
+                printList(listOfWords);
+                break;
+            }
         }
 
-        if (temp.compareTo(end) == 0) {
-            printList(listOfWords);
-        }
-        else {
+        if (temp.compareTo(end) != 0) {
             listOfWords.clear();
             listOfWords.add(null);
             printList(listOfWords);
