@@ -1,6 +1,7 @@
 package com.shortesttransition;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 /**
  * Given a START word, an END word, and a dictionary 
@@ -35,5 +36,29 @@ public class App
         String start = "dog";
         String end = "cat";
         // Send Hash, start and end to a function
+        shortestTransition(dict, start, end);
+    }
+
+    // Method takes start string and transitions to end string via Hash comparison
+    private static void shortestTransition(HashMap<Integer, String> a, String start, String end) {
+        // Create list to store steps.
+        LinkedList<String> listOfWords = new LinkedList<String>();
+        // Create temp String to keep track of progress
+        String temp = start;
+        // Add start to list
+        listOfWords.add(temp);
+
+        printList(listOfWords);
+
+        
+    }
+
+    // Print List
+    private static void printList(LinkedList<String> list) {
+        System.out.printf("\n{ ");
+        for (String elem: list) {
+            System.out.printf("\"%s\" ", elem);
+        }
+        System.out.printf("}\n");
     }
 }
