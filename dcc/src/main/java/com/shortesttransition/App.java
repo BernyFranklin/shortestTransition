@@ -27,16 +27,24 @@ public class App
     public static void main( String[] args )
     {
         // Declare HashMap as per prompt
-        HashMap<Integer, String> dict = new HashMap<Integer, String>();
-        dict.put(0, "dot");
-        dict.put(1, "dop");
-        dict.put(2, "dat");
-        dict.put(3, "cat");
+        HashMap<Integer, String> dict1 = new HashMap<Integer, String>();
+        dict1.put(0, "dot");
+        dict1.put(1, "dop");
+        dict1.put(2, "dat");
+        dict1.put(3, "cat");
+        // Declare HashMap that returns null
+        HashMap<Integer, String> dict2 = new HashMap<Integer, String>();
+        dict2.put(0, "dot");
+        dict2.put(1, "tod");
+        dict2.put(2, "dat");
+        dict2.put(3, "dar");
+
         // Declare start and end strings
         String start = "dog";
         String end = "cat";
         // Send Hash, start and end to a function
-        shortestTransition(dict, start, end);
+        shortestTransition(dict2, start, end);
+
     }
 
     // Method takes start string and transitions to end string via Hash comparison
@@ -48,7 +56,29 @@ public class App
         // Add start to list
         listOfWords.add(temp);
 
-        printList(listOfWords);
+        // Iterate through Hash and compare
+        for (int i = 0; i < a.size(); i++) {
+            String value = "";
+            value = a.get(i);
+
+            // Check for common letters
+            for (int j = 0; j < value.length(); j++) {
+                if (value.charAt(j) == end.charAt(j)) {
+                    temp = value;
+                    listOfWords.add(temp);
+                    break;
+                }
+            }
+        }
+
+        if (temp.compareTo(end) == 0) {
+            printList(listOfWords);
+        }
+        else {
+            listOfWords.clear();
+            listOfWords.add(null);
+            printList(listOfWords);
+        }
 
         
     }
