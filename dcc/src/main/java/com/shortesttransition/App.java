@@ -43,7 +43,7 @@ public class App
         String start = "dog";
         String end = "cat";
         // Send Hash, start and end to a function
-        shortestTransition(dict2, start, end);
+        shortestTransition(dict1, start, end);
 
     }
 
@@ -58,7 +58,9 @@ public class App
 
         // Iterate through Hash and compare
         for (int i = 0; i < a.size(); i++) {
+            // Initialize string 
             String value = "";
+            // Pull value from Hashmap
             value = a.get(i);
 
             // Check for common letters
